@@ -12,7 +12,7 @@ function showCarsList(array) {
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="../` +
+                    <img src="` +
       car.image +
       `" alt="product image" class="img-thumbnail">
                 </div>
