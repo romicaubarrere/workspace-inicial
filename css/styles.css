@@ -1,6 +1,5 @@
 .jumbotron,
 .card-body,
-.container,
 .site-header {
   font-family: "Raleway", serif !important;
 }
@@ -187,4 +186,20 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.body {
+  font-family: "Raleway", serif !important;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.img {
+  width: 72px;
+  aspect-ratio: auto 72 / 57;
+  height: 57px;
+  vertical-align: middle;
 }
