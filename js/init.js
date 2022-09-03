@@ -42,3 +42,19 @@ let getJSONData = function (url) {
       return result;
     });
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  let usuario = localStorage.getItem("email");
+  let password = localStorage.getItem("password");
+
+  if (usuario == undefined || password == undefined) {
+    location.href = "login.html";
+  }
+
+  document.getElementById("desplegable").innerHTML = usuario;
+});
+
+function desconectar() {
+  localStorage.clear();
+  location.href = "login.html";
+}
