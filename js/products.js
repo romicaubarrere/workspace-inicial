@@ -1,40 +1,41 @@
+//cambios de solo autos a productos en general
 //array donde se cargarán los datos recibidos:
 let categoriesArray = [];
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
-function showCarsList(array) {
+function showProductsList(array) {
   let htmlContentToAppend = "";
 
   for (let i = 0; i < array.length; i++) {
-    let car = array[i];
+    let products = productsArray[i];
     htmlContentToAppend +=
       `
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` +
-      car.image +
+      products.image + //cambio de auto a products
       `" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
                         <h4 class="float-start">` +
-      car.name +
+      products.name +
       " - " +
-      car.currency +
+      products.currency +
       " " +
-      car.cost +
+      products.cost +
       `</h4> 
     <br>
     <br>
       <p>  ` +
-      car.description +
+      products.description +
       `</p>
 
                         </div>
                         <small class="text-muted">` +
-      car.soldCount +
+      products.soldCount +
       ` vendidos</small>
                     </div>
 
@@ -47,11 +48,14 @@ function showCarsList(array) {
   }
 }
 
+let catID = PRODUCTS_URL + localStorage.getItem("catID") + EXT_TYPE; //asigna el json a la lista, cambia de 101, 102, 103
+
 document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(EXT_TYPE).then(function (resultObj) {
+  getJSONData(catID).then(function (resultObj) {
+    //obtiene la info del json
     if (resultObj.status === "ok") {
-      carsArray = resultObj.data.products;
-      showCarsList(carsArray);
+      productsArray = resultObj.data.products;
+      showProductsList(productsArray);
     }
   });
 });
