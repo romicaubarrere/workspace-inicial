@@ -43,17 +43,20 @@ let getJSONData = function (url) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  //obtiene los datos del localstorage
   let usuario = localStorage.getItem("email");
   let password = localStorage.getItem("password");
 
   if (usuario == undefined || password == undefined) {
+    //si no hay ninguno que lo mande al login de nuevo
     location.href = "login.html";
   }
 
-  document.getElementById("desplegable").innerHTML = usuario;
+  document.getElementById("desplegable").innerHTML = usuario; //el boton para cerrar sesion, futuro desplegable
 });
 
 function desconectar() {
+  //para cerrar sesion
   localStorage.clear();
   location.href = "login.html";
 }
