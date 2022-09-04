@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
       rel="stylesheet"
     />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/album/"
+    />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -47,13 +51,57 @@
         </div>
       </div>
     </nav>
-    <main class="pb-5 container">
+     
+    <div class="pb-5 container">
+      <!--cambio main-->
       <div class="text-center p-4">
         <h2>Productos</h2>
-        <p class="lead">Verás aqui todos los productos de la categoria Autos</p>
+        <p class="lead">Verás aqui todos los productos de la categoria</p>
+        <!--saque la parte de autos-->
+        <!--codigo nuevo-->
+     <div class="container">
+      <div class="row justify-content-center ml-3">
+        <div class="col-sm-7">
+          <input
+            type="number"
+            class="filter"
+            id="minimo"
+            placeholder="Precio minimo"
+          />
+          <input
+            type="number"
+            class="filter"
+            id="maximo"
+            placeholder="Precio maximo"
+          />
+          <button
+            id="filtrar"
+            class="btn btn-success"
+            onclick="showProductsList()"
+          >
+            Filtrar
+          </button>
+          <button class="btn btn-warning" id="clear" onclick="clear()">
+            Limpiar
+          </button>
+        </div>
+      </div>
+      <div class="row justify-content-center ml-3 mt-3">
+        <div class="col-sm-7">
+          <button class="btn btn-dark" id="asc">Precio ascendente</button>
+          <button class="btn btn-dark" id="des">Precio descendente</button>
+          <button class="btn btn-dark" id="rel">Más relevantes primero</button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!--codigo nuevo-->
         <div role="alert" id="cat-list-container"></div>
       </div>
-    </main>
+    </div>
+   
+    </div>
+    <!--camnio main-->
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
@@ -73,12 +121,7 @@
       </div>
     </footer>
     <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <div class="lds-ring"></div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
