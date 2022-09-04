@@ -15,7 +15,7 @@ function showProductsList(array) {
   }
 
   if (maximo == 0 || maximo == undefined) {
-    maximo = 1000000000000;
+    maximo = 1000000000;
   }
 
   //codigo nuevo

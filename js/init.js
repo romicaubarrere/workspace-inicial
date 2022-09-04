@@ -42,8 +42,10 @@ let getJSONData = function (url) {
     });
 };
 
+// PARTE 1 DE LA ENTREGA 2
+
 document.addEventListener("DOMContentLoaded", () => {
-  //obtiene los datos del localstorage
+  // obtiene los datos del localstorage
   let usuario = localStorage.getItem("email");
   let password = localStorage.getItem("password");
 
