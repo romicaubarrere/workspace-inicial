@@ -90,7 +90,7 @@ async function showProductComment() {
   if (prodComentarios.length > 0) {
     showComment();
   } else {
-    comentarios.innerHTML = `<h4 class="text-muted text-center">Sin comentarios.</h4>`;
+    comentarios.innerHTML = `<h4 class="text-muted text-center">Sin comentarios aun.</h4>`;
   }
 }
 
