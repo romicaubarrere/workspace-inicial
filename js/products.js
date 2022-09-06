@@ -3,10 +3,15 @@
 let productsArray = [];
 let buscado = []; //para la funcion buscar
 
+//entrega 3, declarar el id del producto
+function setProductId(product_id) {
+  localStorage.setItem("productID", product_id);
+  window.location.href = "product-info.html";
+}
+//entrega 3
+
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showProductsList(array) {
-  //codigo nuevo
-
   let minimo = document.getElementById("minimo").value; //toma el id del html
   let maximo = document.getElementById("maximo").value;
 
@@ -19,7 +24,6 @@ function showProductsList(array) {
     maximo = 1000000000;
   }
 
-  //codigo nuevo
   let htmlContentToAppend = "";
 
   for (let i = 0; i < array.length; i++) {
@@ -27,9 +31,9 @@ function showProductsList(array) {
 
     if (products.cost >= minimo && products.cost <= maximo) {
       //para el filtro
-      htmlContentToAppend +=
+      htmlContentToAppend += //probando el onclick
         `
-        <div class="list-group-item list-group-item-action">
+        <div class="list-group-item list-group-item-action" onclick="setProductId(this.id)"> 
             <div class="row">
                 <div class="col-3">
                     <img src="` +
