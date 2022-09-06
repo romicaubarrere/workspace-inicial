@@ -82,9 +82,31 @@
           <ul id="prod-comment" class="list-group">
             
           </ul>
-        </div>
-
-        <!--entrega 3-->
+        
+          <!--HACER COMENTARIOS-->
+          <h5>Agregar comentario:</h5>
+          
+          <div>
+            <input type="text" placeholder="Nombre" id="user">
+          </div>
+      <div class="calificacion">
+        <input id="radio1" type="radio" name="estrellas" value="5" onclick="document.getElementById('score').value='5'">
+        <label for="radio1"><i class="fa fa-star"></i></label>
+        <input id="radio2" type="radio" name="estrellas" value="4" onclick="document.getElementById('score').value='4'">
+        <label for="radio2"><i class="fa fa-star"></i></label>
+        <input id="radio3" type="radio" name="estrellas" value="3" onclick="document.getElementById('score').value='3'">
+        <label for="radio3"><i class="fa fa-star"></i></label>
+        <input id="radio4" type="radio" name="estrellas" value="2"onclick="document.getElementById('score').value='2'">
+        <label for="radio4"><i class="fa fa-star"></i></label>
+        <input id="radio5" type="radio" name="estrellas" value="1" onclick="document.getElementById('score').value='1'">
+        <label for="radio5"><i class="fa fa-star"></i></label><br>
+      </div>
+    
+      <textarea name="Comentar" id="description" cols="93" rows="5" placeholder="Escriba aqui su comentario..."></textarea>
+      <button type="submit" class="btn btn-outline-primary w-100" id="coment" onclick='borrarEstrellas();'>Enviar comentario</button>
+    </div>
+        
+          <!--entrega 3-->
       </div>
     </main>
     <footer class="text-muted">
