@@ -1,6 +1,7 @@
 //cambios de solo autos a productos en general
 //array donde se cargarán los datos recibidos:
 let productsArray = [];
+let buscado = []; //para la funcion buscar
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showProductsList(array) {
@@ -69,8 +70,6 @@ function showProductsList(array) {
 
 let catID = PRODUCTS_URL + localStorage.getItem("catID") + EXT_TYPE; //asigna el json a la lista, cambia de 101, 102, 103
 
-//codigo nuevo, para filtros
-
 function ordenASC() {
   //filtro ascendente
   productsArray.sort((a, b) => {
@@ -117,6 +116,18 @@ function ordenREL() {
   showProductsList();
 }
 
+//buscador
+
+function buscar() {
+  let elemento = document.getElementById("buscador").value;
+  let buscado = productsArray.filter((producto) => {
+    return producto.name.toLowerCase().indexOf(elemento.toLowerCase()) > -1;
+  });
+  showProductsList(buscado);
+}
+
+//buscador
+
 document.getElementById("clear").addEventListener("click", function () {
   document.getElementById("minimo").value = "";
   document.getElementById("maximo").value = "";
@@ -136,7 +147,14 @@ document.getElementById("rel").addEventListener("click", () => {
   ordenREL();
 });
 
-//codigo nuevo
+document.getElementById("buscador").addEventListener("keyup", () => {
+  buscar();
+});
+
+document.getElementById("buscador").addEventListener("mouseover", buscar);
+() => {
+  buscar();
+};
 
 document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(catID).then(function (resultObj) {

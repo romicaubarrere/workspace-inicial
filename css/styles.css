@@ -204,3 +204,8 @@ a.custom-card:hover {
   height: 57px;
   vertical-align: middle;
 }
+
+.buscador {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
