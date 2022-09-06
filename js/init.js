@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function desconectar() {
-  //para cerrar sesion
+  //para cerrar sesion y sacar el usuario
   localStorage.clear();
   location.href = "login.html";
 }
