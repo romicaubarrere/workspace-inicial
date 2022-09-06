@@ -31,9 +31,9 @@ function showProductsList(array) {
 
     if (products.cost >= minimo && products.cost <= maximo) {
       //para el filtro
-      htmlContentToAppend += //probando el onclick
+      htmlContentToAppend += //probando el onclick, funciona y lleva a todos a sus respectivos products id
         `
-        <div class="list-group-item list-group-item-action" onclick="setProductId(this.id)"> 
+        <div class="list-group-item list-group-item-action" onclick="setProductId(${products.id})"> 
             <div class="row">
                 <div class="col-3">
                     <img src="` +
