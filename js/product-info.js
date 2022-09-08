@@ -41,7 +41,7 @@ async function showProductInfo() {
 
   imagenesProductos(infoProducto.images);
 }
-// COMENTARIOS
+// PARTE DE LOS COMENTARIOS
 
 /*Haz la solicitud necesaria para obtener la lista de comentarios de cada producto y muéstralos debajo de lo realizado en el punto anterior (con su puntuación, usuario y fecha). */
 
