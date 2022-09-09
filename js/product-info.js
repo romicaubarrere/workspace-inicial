@@ -68,7 +68,7 @@ async function showProductComment() {
     return textoMostrado;
   }
 
-  //comentarios
+  //para que aparezcan comentarios
 
   function showComment() {
     document.getElementById("comment-num").innerText = prodComentarios.length;
