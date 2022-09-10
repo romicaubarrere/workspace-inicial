@@ -83,7 +83,7 @@ async function showProductComment() {
     }
   }
 
-  const json = await getJSONData(productCommentUrl); //espera a la promise
+  const json = await getJSONData(productCommentUrl); //espera a la promise.
   const prodComentarios = json.data;
   const comentarios = document.getElementById("prod-comment");
 
