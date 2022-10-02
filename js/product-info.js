@@ -40,7 +40,14 @@ async function showProductInfo() {
   datosImportantes("prod-des", infoProducto.description);
 
   imagenesProductos(infoProducto.images);
+
+  const relatedProductsRequest = await getJSONData(
+    PRODUCT_INFO_URL + infoProducto.id + ".json"
+  );
+  const relatedProducts = relatedProductsRequest.data;
+  mostrarRel(relatedProducts);
 }
+
 // PARTE DE LOS COMENTARIOS
 
 /*Haz la solicitud necesaria para obtener la lista de comentarios de cada producto y muéstralos debajo de lo realizado en el punto anterior (con su puntuación, usuario y fecha). */
@@ -96,3 +103,35 @@ async function showProductComment() {
 
 showProductInfo();
 showProductComment();
+
+//Entrega 4
+
+function mostrarRel(infoProducto) {
+  let rela = "";
+
+  infoProducto.relatedProducts.forEach((producto) => {
+    //por cada producto muestra la imagen y el
+    rela += `
+    <div onclick="goToProduct (${producto.id})" class="text-center d-flex flex-column justify-content-center p-4 ">
+    <img src="${producto.image}" alt="" class="img-fluid">
+
+    <h2 class="fw-light">${producto.name}</h2>
+    </div>`;
+  });
+
+  document.getElementById("relacionados").innerHTML += rela;
+}
+
+function goToProduct(id) {
+  window.localStorage.setItem("productID", id);
+  location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODUCTS_URL).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      productos = resultObj.data;
+      mostrarRel();
+    }
+  });
+});
