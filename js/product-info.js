@@ -110,7 +110,7 @@ function mostrarRel(infoProducto) {
   let rela = "";
 
   infoProducto.relatedProducts.forEach((producto) => {
-    //por cada producto muestra la imagen y el
+    //por cada producto muestra la imagen y el nombre
     rela += `
     <div onclick="goToProduct (${producto.id})" class="text-center d-flex flex-column justify-content-center p-4 ">
     <img src="${producto.image}" alt="" class="img-fluid">
@@ -124,7 +124,7 @@ function mostrarRel(infoProducto) {
 
 function goToProduct(id) {
   window.localStorage.setItem("productID", id);
-  location.reload();
+  location.reload(); //recarga la pagina con el nuevo id
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
