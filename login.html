@@ -24,35 +24,36 @@
 
   <body>
     <main class="mt-5">
-      <div class="container">
+      <div class="container mx-auto" style="width: 400px">
         
         <div>
-          <h1>Proyecto E- Commerce Romina Caubarrere 2022</h1>
+       
           <img
-            class="img-responsive"
-            src="img/login.png"
+          src="img/logo-jap-2020.png"
+          class="mx-auto d-block"
             alt="imagen login"
             id="imagenInicio"
-            width="100%"
+            width="72"
+            height="57"
           />
-          <h2>Inicio de sesión</h2>
-          <br />
-          <label for="username">
-         
-            <h4 style="cursor: pointer;">Email </h4>
-          </label>
-          <input id="mail" type="text" class="form-control" placeholder="tucorreo@gmail.com">
-          <div class="invalid-feedback" id="errorEnMail"></div>
-          </div>
-          <br />
+          <br>
+          <h4 class="h4 mb-3 fw-normal text-center" >Inicio de sesión</h4>
+          
 
-          <label for="password">
-            <h4 style="cursor: pointer;">Contraseña</h4>
-          </label>
-          <input id="password" type="password" class="form-control" placeholder="Contraseña">
+         
+          <input style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;" id="mail" type="text" class="form-control p-3" placeholder="tucorreo@gmail.com">
+          <div class="invalid-feedback" id="errorEnMail"></div>
+        </div>
+          
+          <input style="border-top-left-radius: 0; border-top-right-radius: 0; border-top: hidden;" id="password" type="password" class="form-control p-3" placeholder="Contraseña">
           <div class="invalid-feedback" id="errorEnPassword"></div>
           <br>
-          <button id="boton" class="btn btn-primary btn-lg">Ingresar</button>
+          <label> 
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+          <br>
+          <br>
+          <button id="boton" class="w-100 btn btn-lg btn-primary">Ingresar</button>
         </div>
       </div>
     </main>
