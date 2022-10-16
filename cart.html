@@ -80,20 +80,52 @@
      <div id="prod">
       <table id="productosV" class="table table-striped table-secondary">  
       </table>
-      <table id="totalprod" class="table table-striped table-secondary">
-        <tr>
-        <th>Total:</th>
-        <th id="total"></th>
-        </tr>
-      </table>
+      
     </div>
     <br />
-    <div style="width: 68.5%; margin: 0px auto; margin-top: -2.5%;">
-            
+    <br>
+    <br>
+
+
+    <!-- boton finalizar compra -->
+    <div style="width: 68.5%; margin: 0px auto; margin-top: -2.5%;">            
     <button type="button" class="btn btn-dark w-100" data-toggle="modal" data-target="#exampleModal">
       Finalizar compra
     </button>
+<!-- boton finalizar compra -->
+<br>
+<br>
+<br>
+<br>
 
+<h4>Tipo de envio:</h4>
+<br>
+<div class="form-group">
+
+  <select class="form-control" id="envio" onchange="calcularSubTotal()">
+   
+    <option name="envio" value="premium">Premium (2-5 dias)</option>
+    <option name="envio" value="express">Express (5-8 dias)</option>
+    <option name="envio" value="standard">Standard (12-15 dias)</option>
+  </select>
+
+  <br>
+  <div id="costoE"></div>
+</div>
+
+    <div class="modal-body">  
+      <div id="formu">
+        <h5>Envio</h5>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Calle" name="dir"/>
+          <input type="text" class="form-control mt-1" placeholder="Esquina" name="dir"/>
+          <input type="text" class="form-control mt-1" placeholder="Numero" name="dir"/>
+          <input type="text" class="form-control mt-1" placeholder="Pais y ciudad" name="dir"/>
+        </div>
+
+        <hr />
+
+  
 <!--Entrega 5-->
 
     </main>

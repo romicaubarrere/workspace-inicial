@@ -29,7 +29,7 @@ function mostrarCarrito(carrito) {
         <b>${carrito.articles[i].name}</b>
         </td>
         <td>
-        <input type="number" class="cantidad" min="0" value=${carrito.articles[i]} onchange="calcularSubTotal()"></input> 
+        <input type="number" class="cantidad" min="0" value=${carrito.articles[i].count} onchange="calcularSubTotal()"></input> 
         </td>
         <td>
         ${carrito.articles[i].currency}
@@ -63,15 +63,16 @@ function calcularSubTotal() {
   subtotal = 0;
   costo = 0;
   //consigo los precios del json
-  let preciosU = document.getElementsByClassName("costo");
+  let preciosUnidad = document.getElementsByClassName("costo");
   let cantidad = document.getElementsByClassName("cantidad");
 
-  for (let i = 0; i < preciosU.length; i++) {
+  for (let i = 0; i < preciosUnidad.length; i++) {
     subtotal +=
-      parseFloat(preciosU[i].innerHTML) * parseFloat(cantidad[i].value); //REDONDEO
+      parseFloat(preciosUnidad[i].innerHTML) * parseFloat(cantidad[i].value);
 
     document.getElementById("subtotal" + i).innerHTML =
-      "$" + parseFloat(preciosU[i].innerHTML) * parseFloat(cantidad[i].value);
+      "$" +
+      parseFloat(preciosUnidad[i].innerHTML) * parseFloat(cantidad[i].value);
   }
 
   total += subtotal;
