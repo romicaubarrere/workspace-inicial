@@ -90,7 +90,7 @@ function calcularSubTotal() {
     "<b>Su costo de envio es: $" + costo.toFixed(0) + "</b>";
 }
 
-//  metodos de pago
+//  metodos de pago, va actualizando si selecciona uno u otro
 
 function seleccionar() {
   let sel = document.getElementById("pago").value;
@@ -161,6 +161,13 @@ function transeferencia() {
 
   document.getElementById("metPago").innerHTML = transf;
 }
+
+//funcion volver
+
+function volver() {
+  window.location.href = "index.html";
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
