@@ -13,12 +13,6 @@ function mostrarCarrito(carrito) {
   for (let i = 0; i < carrito.articles.length; i++) {
     //por cada articulo muestro sus atributos
 
-    if (carrito.articles[i].currency == "USD") {
-      //if para que no me aparezca en dolares
-      carrito.articles[i].currency = "UYU";
-      carrito.articles[i].unitCost = carrito.articles[i].unitCost * 41.08;
-    }
-
     cart += `
         </tr>
         <tr id="prod${i}">
@@ -65,6 +59,7 @@ function calcularSubTotal() {
   //consigo los precios del json
   let preciosUnidad = document.getElementsByClassName("costo");
   let cantidad = document.getElementsByClassName("cantidad");
+  let envio = document.getElementById("envio").value;
 
   for (let i = 0; i < preciosUnidad.length; i++) {
     subtotal +=
@@ -76,8 +71,96 @@ function calcularSubTotal() {
   }
 
   total += subtotal;
+
+  // calcular el envio
+
+  if (envio == "local") {
+    costo = 0;
+  } else if (envio == "standard") {
+    costo = total * 0.05;
+  } else if (envio == "express") {
+    costo = total * 0.07;
+  } else if (envio == "premium") {
+    costo = total * 0.15;
+  }
+  document.getElementById("total").innerHTML = "$" + (total + costo).toFixed(0);
+  document.getElementById("total1").innerHTML =
+    "$" + (total + costo).toFixed(0);
+  document.getElementById("costoE").innerHTML =
+    "<b>Su costo de envio es: $" + costo.toFixed(0) + "</b>";
 }
 
+//  metodos de pago
+
+function seleccionar() {
+  let sel = document.getElementById("pago").value;
+  if (sel == "transf") {
+    transeferencia();
+  } else if (sel == "tarjetaC") {
+    tarjetaC();
+  }
+}
+
+// funcion para la tarjeta de credito
+
+function tarjetaC() {
+  let tarjeta = "";
+
+  tarjeta = `
+  <div>
+      <h4>Datos de la tarjeta</h4>
+          <div class="form-row">
+              <div class="form-group col-md-12">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" name="credito">
+              </div>
+              <div class="form-group col-md-12">
+                <label>Apellido</label>
+                <input type="text" class="form-control"  placeholder="Apellido" name="credito">
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Numero de tarjeta</label>
+              <input type="number" class="form-control" placeholder="Numero de tarjeta" name="credito">
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-3">
+                <label>CVV</label>
+                <input type="number" class="form-control" placeholder="CVV" name="credito">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Vencimiento</label>
+                <input type="month" class="form-control" placeholder="Vencimiento" name="credito">
+              </div>
+            
+              
+          </div>
+          
+  </div> 
+
+  `;
+  document.getElementById("metPago").innerHTML = tarjeta;
+}
+
+//funcion si selecciona transferencia bancaria
+
+function transeferencia() {
+  let transf = "";
+
+  transf = `
+  <div>
+  <br>
+  <h4>Datos de la transferencia</h4>
+  <p>Nombre del banco: BROU</p>
+  <p>Titular: Emercado</p>
+  <p>Sucursal: Solymar, Ciudad de la Costa</p>
+  <p>Numero de cuenta: 0008 7788 3333</p>
+  <p>Enviar comprobante de la transferencia a; jap@emercado.com.uy</p>
+  </div>
+  `;
+
+  document.getElementById("metPago").innerHTML = transf;
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

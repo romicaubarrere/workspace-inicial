@@ -84,6 +84,8 @@
       </div>
       <table id="productosV" class="table table-striped table-secondary">  
       </table>
+
+      <!--tabla total-->
       <div id="prod">
         <table id="totalprod" class="table table-striped table-secondary">
           <tr>
@@ -101,7 +103,7 @@
 
     <!-- boton finalizar compra -->
     <div style="width: 68.5%; margin: 0px auto; margin-top: -2.5%;">            
-    <button type="button" class="btn btn-dark w-100" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-dark w-100">
       Finalizar compra
     </button>
 <!-- boton finalizar compra -->
@@ -124,7 +126,7 @@
   <br>
 </div>
 
-    <div class="modal-body">  
+  
       <div id="formu">
         <h5>Envio</h5>
         <div class="form-group">
@@ -136,10 +138,36 @@
 
         <hr />
 
-  
+        <!-- boton modal forma de pago-->
+        <botton type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"> Forma de pago</botton>
+       
 <!--Entrega 5-->
 
-    </main>
+    </main>  
+     <!-- modal para el tipo de pago-->
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <h4>Forma de pago:</h4>
+              <div class="form-group">
+                <select class="form-control" id="pago" onchange="seleccionar()">
+                  <option selected hidden value="">Elija su forma de pago</option>
+                  <option name="pago" value="tarjetaC">Tarjeta de credito</option>
+                  <option name="pago" value="transf">Transferencia bancaria</option>  
+                </select>
+              </div>
+              <div id="metPago"></div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
@@ -169,5 +197,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/cart.js"></script>
+
+
+   
   </body>
 </html>
