@@ -46,8 +46,7 @@ function mostrarCarrito(carrito) {
     <th>Cant.</th>
     <th>Moneda</th>
     <th>Precio unitario</th>
-    <th>Subtotal</th>
-    <th></th>` + cart; //llamo al json
+    <th>Subtotal</th>` + cart; //llamo al json
 
   calcularSubTotal();
 }
