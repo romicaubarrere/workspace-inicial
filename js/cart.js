@@ -34,7 +34,9 @@ function mostrarCarrito(carrito) {
         <td id="subtotal${i}">
         0
         </td>
-       
+       <td>
+       <button id="eliminar${i}" class="btn btn-danger" onclick="eliminar(${i})">X</button>
+       </td>
         </tr>
         `;
   }
@@ -46,8 +48,8 @@ function mostrarCarrito(carrito) {
     <th>Cant.</th>
     <th>Moneda</th>
     <th>Precio unitario</th>
-    <th>Subtotal</th>` + cart; //llamo al json
-
+    <th>Subtotal</th> 
+    <th>   </th>` + cart; //llamo al json
   calcularSubTotal();
 }
 
@@ -165,6 +167,58 @@ function transeferencia() {
 
 function volver() {
   window.location.href = "index.html";
+}
+
+//para que sean requeridos en la direccion
+document.getElementById("pag").addEventListener("click", function (o) {
+  o.preventDefault();
+
+  let dir = document.getElementsByName("dir");
+  for (let i = 0; i < dir.length; i++) {
+    if (dir[i].value == "") {
+      dir[i].style.border = "1px solid red";
+    }
+  }
+
+  // para que sea requerido el metodo de pago
+
+  let forma = document.getElementById("pago");
+  if (forma.value == "") {
+    forma.style.border = "1px solid red";
+  } else if (forma.value == "tarjetaC") {
+    let cred = document.getElementsByName("credito");
+    for (let i = 0; i < cred.length; i++) {
+      if (cred[i].value == "") {
+        cred[i].style.border = "1px solid red";
+        o.preventDefault();
+        //cancela el evento si es cancelable , lo que significa que la acción predeterminada que pertenece al evento no ocurrirá.
+      } else {
+        document.getElementById(
+          "exampleModalLabel"
+        ).innerHTML = `Compra finalizada`;
+
+        document.getElementById("pag").remove();
+        document.getElementById(
+          "but"
+        ).innerHTML = `<button type="button" class="btn btn-success w-100 " onclick="volver()" > Finalizar</button> <div class="alert alert-success" role="alert">
+        Compra finalizada con exito!
+      </div>`;
+      }
+    }
+  } else if (forma.value == "transf") {
+    document.getElementById(
+      "but"
+    ).innerHTML = `<button type="submit" class="btn btn-success w-100 " onclick="volver()" >Finalizar</button> <div class="alert alert-success" role="alert">
+    Compra finalizada con exito!
+  </div>`;
+  }
+});
+
+function eliminar(posicion) {
+  const removed = cartArray.articles.splice(posicion, 1);
+  localStorage.setItem("carrito", JSON.stringify(cartArray));
+  mostrarCarrito(cartArray);
+  calcularSubTotal();
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de

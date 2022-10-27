@@ -91,6 +91,7 @@
           <tr>
           <th > Total:</th>
           <th id="total" ></th>
+          
           </tr>
         </table>
       </div>
@@ -101,12 +102,9 @@
     <br>
 
 
-    <!-- boton finalizar compra -->
+   
     <div style="width: 68.5%; margin: 0px auto; margin-top: -2.5%;">            
-    <button type="button" class="btn btn-dark w-100">
-      Finalizar compra
-    </button>
-<!-- boton finalizar compra -->
+  
 <br>
 <br>
 <br>
@@ -136,19 +134,28 @@
       <div id="formu">
         <h5>Envio</h5>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Calle" name="dir" required/>
+          <input type="text" class="form-control" placeholder="Calle" name="dir" />
           <input type="text" class="form-control mt-1" placeholder="Esquina" name="dir"/>
-          <input type="text" class="form-control mt-1" placeholder="Numero" name="dir"/>
+          <input type="number" class="form-control mt-1" placeholder="Numero" name="dir"/>
           <input type="text" class="form-control mt-1" placeholder="Pais y ciudad" name="dir"/>
         </div>
       </div>
         <hr />
-
+   
+<div name="botones" class="align-items-center col v-center">
         <!-- boton modal forma de pago-->
         <botton type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"> Forma de pago</botton>
-       
+       <br>
+       <br>   
+       <br>
 <!--Entrega 5-->
 
+ <!-- boton finalizar compra -->
+ <div id="but" class="p-1">            
+  <button type="submit" class="btn btn-outline-success w-100 " id="pag">Comprar</button>
+ </div>
+<!-- boton finalizar compra -->
+</div>
     </main>  
      <!-- modal para el tipo de pago-->
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,6 +163,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+            <button type="button" class="btn-close"  aria-label="Close" data-bs-dismiss="modal">
+              <span aria-hidden="true"></span>
+            </button>
           </div>
           <div class="modal-body">
             <div class="text-center">
@@ -172,8 +182,9 @@
                 <h5>Total:</h5>
                 <p id="total1"></p>
               </div>
+              <button type="submit" class="btn btn-success w-100" data-bs-dismiss="modal" id="pag">OK</button>
             </div>
-            <div id="but" class="p-1"><button type="submit" class="btn btn-success w-100 " id="pag">Comprar</button></div>
+           
             </div>
           </div>
         </div>
