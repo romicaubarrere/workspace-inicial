@@ -115,14 +115,20 @@
 <h4>Tipo de envio:</h4>
 <br>
 <div>
-
-  <select class="form-control" id="envio">
+<!--el envio cambia el valor del subtotal automaticamente por el onchange-->
+  <select class="form-control" id="envio" onchange="calcularSubTotal()">
    
     <option name="envio" value="premium">Premium (2-5 dias)</option>
     <option name="envio" value="express">Express (5-8 dias)</option>
     <option name="envio" value="standard">Standard (12-15 dias)</option>
   </select>
 
+
+  <br>
+
+  <div id="costoE"></div>
+
+  <br>
   <br>
 </div>
 
