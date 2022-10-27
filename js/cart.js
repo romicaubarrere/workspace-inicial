@@ -152,7 +152,7 @@ function transeferencia() {
   <br>
   <h4>Datos de la transferencia</h4>
   <p>Nombre del banco: BROU</p>
-  <p>Titular: Emercado</p>
+  <p>Titular: Emercado Romi</p>
   <p>Sucursal: Solymar, Ciudad de la Costa</p>
   <p>Numero de cuenta: 0008 7788 3333</p>
   <p>Enviar comprobante de la transferencia a; jap@emercado.com.uy</p>
