@@ -13,6 +13,7 @@
     />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -90,7 +91,173 @@
         </div>
       </div>
     </nav>
-    <main></main>
+    <main>
+      <!--ENTREGA 7-->
+
+      <div class="container mt-5 mb-5" id="data">
+        <div class="row justify-content-center">
+          <div class="col-sm-4">
+            <img
+              src="img/img_perfil.png"
+              class="w-50 border rounded-circle"
+              id="imagen"
+              alt="imagen de perfil"
+            />
+          </div>
+          <div class="col-sm-4 mt-5">
+            <input
+              type="file"
+              id="imagen2"
+              class="mt-4"
+              onchange="foto()"
+              accept="image/png, image/jpeg"
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- DATOS -->
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <p
+              id="usuario"
+              style="
+                text-align: center;
+                font-size: 150%;
+                font-weight: bold;
+                letter-spacing: 1px;
+              "
+            ></p>
+          </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4"><h3>Datos personales:</h3></div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>Nombre:</h6>
+            <p class="texto" id="name"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="name1"
+              placeholder="Ingrese su nombre"
+              style="width: 100%"
+              required
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>Segundo nombre:</h6>
+            <p class="texto" id="secondNameTxt"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="name2"
+              placeholder="Ingrese su segundo nombre"
+              style="width: 100%"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>Apellido:</h6>
+            <p class="texto" id="surnameTxt"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="surname1"
+              placeholder="Ingrese su primer apellido"
+              style="width: 100%"
+              required
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>Segundo apellido:</h6>
+            <p class="texto" id="surname2Txt"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="surname2"
+              placeholder="Ingrese su segundo apellido"
+              style="width: 100%"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <div class="col-sm-4"><h3>Informacion de contacto:</h3></div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>E-mail:</h6>
+            <p class="email" id="email"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="email1"
+              placeholder="Ingrese su E-mail"
+              style="width: 100%"
+              required
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <h6>Telefono de contacto:</h6>
+            <p class="texto" id="contact"></p>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="email"
+              id="contact1"
+              placeholder="Ingrese su numero de contacto"
+              style="width: 100%"
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- BOTONES -->
+        <br />
+        <br />
+        <div class="row mt-3 justify-content-center">
+          <div class="col-sm-4">
+            <button class="btn w-100 bg-success" id="change">
+              Cambiar Datos
+            </button>
+          </div>
+          <div class="col-sm-4">
+            <button type="submit" class="btn w-100 bg-success" id="save">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--ENTREGA 7-->
+    </main>
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
@@ -112,5 +279,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/my-profile.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 function registro() {
-  let email = document.getElementById("mail");
+  let email = document.getElementById("usuario");
   let password = document.getElementById("password");
 
   let errorEnMail = document.getElementById("errorEnMail");
