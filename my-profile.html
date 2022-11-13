@@ -94,6 +94,8 @@
     <main>
       <!--ENTREGA 7-->
 
+      <!--Desafiate foto-->
+
       <div class="container mt-5 mb-5" id="data">
         <div class="row justify-content-center">
           <div class="col-sm-4">
@@ -111,12 +113,17 @@
               class="mt-4"
               onchange="foto()"
               accept="image/png, image/jpeg"
-              disabled
             />
           </div>
         </div>
 
-        <!-- DATOS -->
+        <!--desafiate foto-->
+
+  <form action="#" method="get" class="row mt-4 needs-validation" id="Form" novalidate>
+    <div class=" container col-sm-6"> 
+      <div class="row mt-3 justify-content-center">
+        <div class="col-sm-3"><h3>Tu perfil</h3></div>
+      </div>
 
         <div class="row mt-3 justify-content-center">
           <div class="col-sm-4">
@@ -124,137 +131,69 @@
               id="usuario"
               style="
                 text-align: center;
-                font-size: 150%;
+                font-size: 100%;
                 font-weight: bold;
                 letter-spacing: 1px;
               "
             ></p>
           </div>
         </div>
+        <div class="mt-5 mb-5">
+            <div class="row col justify-content-center">
+              <div class="col-sm-6">
+                <label for="firstName">Nombre</label>
+                <input class="form-control" type="text" name="primerNombre" id="primerNombre" required>
+                <div class="invalid-feedback">
+                  Ingrese su nombre.
+                </div>
+              </div>
 
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4"><h3>Datos personales:</h3></div>
-        </div>
+              <div class="col-sm-6">
+                <label for="secondName">Segundo Nombre</label>
+                <input class="form-control" type="text" name="segundoNombre" id="segundoNombre">
+                <div class="invalid-feedback">
+                  Ingrese su segundo nombre.
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="lastname">Apellido</label>
+                <input class="form-control" type="text" name="primerApellido" id="primerApellido" required>
+                <div class="invalid-feedback">
+                  Ingrese su apellido.
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="secondLastname">Segundo Apellido</label>
+                <input class="form-control" type="text" name="segundoApellido" id="segundoApellido">
+                <div class="invalid-feedback">
+                  Ingrese su segundo apellido.
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="email">Correo electronico</label>
+                <input class="form-control" type="email" name="correo" id="correo" required>
+                <div class="invalid-feedback">
+                  Ingrese su correo.
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <label for="phoneNumber">Telefono de contacto</label>
+                <input class="form-control" type="number" name="telefono" id="telefono">
+                <div class="invalid-feedback">
+                  Ingrese su telefono de contacto.
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            <div class="container col-12">
+              <button class="btn btn-outline-info" type="submit" onclick="guardarCambios()">Guardar informacion</button>
+                <a class="btn btn-outline-info" type="button" onclick="eliminarCambios()">Eliminar cambios</a>
+            </div>
+          </div>
+      
+    </form>
 
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>Nombre:</h6>
-            <p class="texto" id="name"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="text"
-              id="name1"
-              placeholder="Ingrese su nombre"
-              style="width: 100%"
-              required
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>Segundo nombre:</h6>
-            <p class="texto" id="secondNameTxt"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="text"
-              id="name2"
-              placeholder="Ingrese su segundo nombre"
-              style="width: 100%"
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>Apellido:</h6>
-            <p class="texto" id="surnameTxt"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="text"
-              id="surname1"
-              placeholder="Ingrese su primer apellido"
-              style="width: 100%"
-              required
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>Segundo apellido:</h6>
-            <p class="texto" id="surname2Txt"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="text"
-              id="surname2"
-              placeholder="Ingrese su segundo apellido"
-              style="width: 100%"
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="row mt-4 justify-content-center">
-          <div class="col-sm-4"><h3>Informacion de contacto:</h3></div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>E-mail:</h6>
-            <p class="email" id="email"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="text"
-              id="email1"
-              placeholder="Ingrese su E-mail"
-              style="width: 100%"
-              required
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <h6>Telefono de contacto:</h6>
-            <p class="texto" id="contact"></p>
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="email"
-              id="contact1"
-              placeholder="Ingrese su numero de contacto"
-              style="width: 100%"
-              disabled
-            />
-          </div>
-        </div>
-
-        <!-- BOTONES -->
-        <br />
-        <br />
-        <div class="row mt-3 justify-content-center">
-          <div class="col-sm-4">
-            <button class="btn w-100 bg-success" id="change">
-              Cambiar Datos
-            </button>
-          </div>
-          <div class="col-sm-4">
-            <button type="submit" class="btn w-100 bg-success" id="save">
-              Guardar cambios
-            </button>
-          </div>
-        </div>
-      </div>
 
       <!--ENTREGA 7-->
     </main>
